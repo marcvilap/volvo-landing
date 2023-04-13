@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+
+	<meta charset="utf-8">
+	<link rel="icon" href="%sveltekit.assets%/favicon.png">
+	<meta name="viewport" content="width=device-width">
+	<title>Volvo</title>
+
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="description" content="">
+	<meta property="og:title" content="Volvo">
+	<meta property="og:description" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="%sveltekit.assets%/rrss.jpg">
+	<meta property="og:url" content="">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:image" content="%sveltekit.assets%/rrss.jpg">
+
+	<!-- Google Tag Manager Eltiempo.es -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+			var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-K9DJJ6X');
+	</script>
+	<!-- End Google Tag Manager Eltiempo.es -->
+
+	%sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9DJJ6X" style="display:none"></iframe>
+	</noscript>
+	<div class="contents">%sveltekit.body%</div>
+	<!-- Didomi Eltiempo.es -->
+	<script async src="https://statics.eltiempo.es/didomi/v2.2.0/didomi.js"></script>
+	<!-- End Didomi Eltiempo.es -->
+</body>
+
+</html>

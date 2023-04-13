@@ -1,0 +1,20 @@
+@font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Light.woff2) format('woff2'); }
+/* @font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Semibold.woff2) format('woff2'); } */
+@font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Bold.woff2) format('woff2'); }
+@font-face { font-family: 'Globoface Gothic Display 2001'; font-style: normal; font-weight: 700; font-display: swap; src: url(../src/lib/assets/fonts/Globoface-Gothic-Display-2001.woff2) format('woff2'); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@media (max-width: 400px) { html { font-size: 4vw } }
+	html { @apply scroll-smooth antialiased }
+}
+
+@layer components {
+}
+
+@layer utilities {
+	.bg-footer { background-image: url(./lib/assets/images/footer.png) }
+}

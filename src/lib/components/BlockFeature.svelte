@@ -1,0 +1,22 @@
+<script lang="ts">
+	import Intersection from '$lib/components/Intersection.svelte'
+	export let number: string
+	export let title: string
+	export let description: string
+	export let right = false
+	let intersecting = false
+</script>
+
+<Intersection bind:intersecting>
+	<div class="relative md:flex gap-8 mb-20 max-w-4xl" class:ml-auto={right}>
+		<span
+			class="transition duration-1000 leading-[.7] font-bold text-[#F8EBC0] text-7xl md:text-[15rem]"
+			class:opacity-0={!intersecting}
+			class:-translate-x-24={!intersecting}>{number}</span
+		>
+		<div class="transition duration-1000" class:opacity-0={!intersecting} class:translate-x-24={!intersecting}>
+			<h3 class="font-display text-3xl max-md:mt-4 md:text-5xl">{title}</h3>
+			<p>{description}</p>
+		</div>
+	</div>
+</Intersection>
