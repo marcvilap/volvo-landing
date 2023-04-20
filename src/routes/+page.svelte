@@ -16,6 +16,32 @@
 	let intersection02 = false
 	let intersection03 = false
 	let intersection04 = false
+
+	import { onMount } from 'svelte'
+	import Swiper, {} from 'swiper'
+	import 'swiper/css'
+
+	let theSwiper: HTMLDivElement
+	let swiper: Swiper
+	onMount(() => {
+		swiper = new Swiper(theSwiper, {
+			modules: [],
+			slidesPerView: 1,
+			spaceBetween: 32,
+			loop:true,
+			breakpoints: {
+				720: {
+					slidesPerView: 2,
+					spaceBetween: 32,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 32,
+				},
+			}
+		})
+	})
+
 </script>
 
 <main class="overflow-hidden text-white bg-[#057C76] md:text-2xl">
@@ -128,12 +154,12 @@
 					<img class="bg-white rounded-full border-[.75rem] border-[#F8EBC0]" src={image3} alt="" />
 					<div class="absolute -inset-8">
 						<svg class="w-full h-full animate-rotate-l" viewBox="0 0 100 100">
-							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49"/>
+							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49" />
 						</svg>
 					</div>
 					<div class="absolute -inset-16">
 						<svg class="w-full h-full animate-rotate-r" viewBox="0 0 100 100">
-							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49"/>
+							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49" />
 						</svg>
 					</div>
 				</div>
@@ -220,50 +246,116 @@
 	<div class="py-20 relative mb-20">
 		<img class="absolute left-0 top-0 w-full h-full object-cover opacity-80" src={image8} alt="" />
 		<div class="container relative">
-			<div class="grid gap-8 md:grid-cols-3">
-				<div class="overflow-hidden relative rounded-full border-8 border-[#07AAA2]">
-					<img class="w-full" src={item1} alt="" />
-					<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-[#07AAA2]/50">
-						<h4 class="text-4xl font-display">FOR LIFE</h4>
-						<p class="text-lg font-bold">
-							El nuevo posicionamiento de Volvo que nos hace recordar los inventos que cambiaron la seguridad para
-							siempre
-						</p>
+			<div class="swiper" bind:this={theSwiper}>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-[#07AAA2]">
+							<img class="w-full" src={item1} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-[#07AAA2]/50">
+								<h4 class="text-4xl font-display">FOR LIFE</h4>
+								<p class="text-lg font-bold">
+									El nuevo posicionamiento de Volvo que nos hace recordar los inventos que cambiaron la seguridad para
+									siempre
+								</p>
+							</div>
+						</div>
 					</div>
-				</div>
-
-				<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
-					<img class="w-full" src={item2} alt="" />
-					<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
-						<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-							<path
-								d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-							/>
-						</svg>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
 					</div>
-				</div>
-
-				<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
-					<img class="w-full" src={item2} alt="" />
-					<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
-						<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-							<path
-								d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-							/>
-						</svg>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+							<img class="w-full" src={item2} alt="" />
+							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
+									<path
+										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
+									/>
+								</svg>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<nav class="flex gap-12 justify-center mt-12">
-				<button class="w-8">
+				<button class="w-8" on:click={() => swiper.slidePrev()}>
 					<svg fill="currentColor" viewBox="0 0 64 44">
 						<path
 							d="M10.2 19H64v6H10.2l14 13.9a3 3 0 0 1 0 4.2 3 3 0 0 1-4.2 0L.9 24.1a3 3 0 0 1 0-4.2l19-19a3 3 0 0 1 4.3 0 3 3 0 0 1 0 4.2l-14 14Z"
 						/>
 					</svg>
 				</button>
-				<button class="w-8">
+				<button class="w-8" on:click={() => swiper.slideNext()}>
 					<svg fill="currentColor" viewBox="0 0 64 44">
 						<path
 							d="M53.8 19H0v6h53.8l-14 13.9a3 3 0 0 0 0 4.2 3 3 0 0 0 4.2 0l19.1-19a3 3 0 0 0 0-4.2l-19-19a3 3 0 0 0-4.3 0 3 3 0 0 0 0 4.2l14 14Z"
