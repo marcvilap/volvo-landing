@@ -70,17 +70,15 @@
 				class:translate-y-24={!intersection02}
 			>
 				<p>
-					<span class="float-left font-bold -mt-2 mr-4 text-[#F8EBC0] leading-[.75] text-9xl md:text-[20rem]">E</span>sa
-					seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe.
-					Por esta razón, acaba de lanzar
-					<a class="underline" target="_blank" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/"
+					<span class="float-left font-bold -mt-2 mr-4 text-[#F8EBC0] leading-[.75] text-9xl md:text-[20rem]">E</span>sa seguridad juega un papel 
+					fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe. Por esta razón, acaba de lanzar 
+					<a rel="sponsored" class="underline" target="_blank" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/"
 						>For Life</a
-					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado
-					en protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la
-					seguridad. Porque
+					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado en protegernos en la carretera, que no hay mayor definición de libertad que 
+					aquella que va de la mano de la nueva era de seguridad. Porque
 					<strong class="text-[#F8EBC0]"
-						>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad</strong
-					>.
+						>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad.</strong
+					>
 				</p>
 				<p>
 					Incluso al montar en un coche podemos sentir esa sensación de seguridad. El simple gesto de abrocharse el
@@ -99,8 +97,8 @@
 				class:opacity-0={!intersection03}
 				class:translate-y-24={!intersection03}
 			>
-				Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición
-				de libertad que aquella que va de la mano de la seguridad
+				Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición de 
+				libertad que aquella que va de la mano de la nueva era de seguridad
 			</h3>
 		</Intersection>
 	</div>
@@ -123,8 +121,7 @@
 				/>
 			</Intersection>
 			<p class="mx-auto mb-20 max-w-4xl font-bold text-xl md:text-3xl">
-				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la
-				humanidad que han contribuido a este presente en el que seguridad es sinónimo de libertad.
+				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la humanidad que han contribuido a este presente en el que la nueva era de seguridad es sinónimo de libertad.
 			</p>
 
 			<BlockImages image1={image4} image2={image5} />
@@ -142,7 +139,7 @@
 			<BlockFeature
 				number="3"
 				title="Cinturón de seguridad de tres puntos"
-				description="Ideado por Nils Bohlin en 1959, se le considera responsable de haber salvado más de un millón de vidas en las carreteras. El cinturón de seguridad mantiene al pasajero de un vehículo a motor sujetado a su asiento, de manera que evita que salga disparado del habitáculo o se golpee contra otros elementos de su interior, protegiéndole de impactos que podrían ser mortales."
+				description="Ideado por Nils Bohlin en 1959, se le considera responsable de haber salvado más de un millón de vidas en las carreteras.<a rel='sponsored' target='_blank' href='https://www.volvocars.com/es/v/safety/highlights?utm_source=other&utm_medium=referral&utm_content=lifestyle_tracking_1x1_cinturon-seguridad&utm_campaign=es_lifestyle_awareness_2303_masterbrand_other_branded-content&sourceapplicationinformation=es_lst_awr_mbr&utm_id=362481354&dclid=CPbmyYnbuP4CFd4RBgAdGwEJYw'><u>El cinturón de seguridad</u></a> mantiene al pasajero de un vehículo a motor sujetado a su asiento, de manera que evita que salga disparado del habitáculo o se golpee contra otros elementos de su interior, protegiéndole de impactos que podrían ser mortales."
 			/>
 			<BlockFeature
 				right
@@ -165,7 +162,7 @@
 			<BlockFeature
 				number="7"
 				title="Semáforo"
-				description="Estos sistemas para controlar el tráfico se comenzaron a utilizar en Londres en la segunda mitad del siglo XIX. La adopción masiva de los coches los convirtió en una herramienta indispensable de las ciudades tanto para ordenar el tráfico como para garantizar la segura convivencia entre vehículos y peatones."
+				description="Estos sistemas para controlar el tráfico se comenzaron a utilizar en Londres en la segunda mitad del siglo XIX. La adopción masiva de los coches los convirtió en una herramienta indispensable de las ciudades tanto para ordenar el tráfico como para garantizar la <a href='https://www.volvocars.com/es/for-life/?utm_source=other&utm_medium=referral&utm_content=lifestyle_tracking_1x1_for-life&utm_campaign=es_lifestyle_awareness_2303_masterbrand_other_branded-content&sourceapplicationinformation=es_lst_awr_mbr&utm_id=362480976&dclid=CIqG9PXcuP4CFdTZ1Qodv74FpQ' target='_blank' rel='sponsored'><u> segura convivencia</u></a> entre vehículos y peatones."
 			/>
 			<BlockFeature
 				right

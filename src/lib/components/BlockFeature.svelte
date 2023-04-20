@@ -16,7 +16,7 @@
 		>
 		<div class="transition duration-1000" class:opacity-0={!intersecting} class:translate-x-24={!intersecting}>
 			<h3 class="font-display text-3xl max-md:mt-4 md:text-5xl">{title}</h3>
-			<p>{description}</p>
+			<p>{@html description}</p>
 		</div>
 	</div>
 </Intersection>
