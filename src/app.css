@@ -18,3 +18,11 @@
 @layer utilities {
 	.bg-footer { background-image: url(./lib/assets/images/footer.png) }
 }
+
+
+.animate-scale { animation: scale 1s alternate infinite ease-in }
+
+@keyframes scale {
+from {transform: scale(.75) }
+to {transform: scale(1) }
+}

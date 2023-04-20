@@ -30,7 +30,7 @@
 		/>
 		<Intersection bind:intersecting={intersection01} class="container pt-24 pb-8 min-h-screen relative flex flex-col">
 
-			<a class="w-20 mb-8" href="/">
+			<a class="w-20 mb-8 animate-scale" href="/">
 				<svg viewBox="0 0 90 90">
 					<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
 					<path
