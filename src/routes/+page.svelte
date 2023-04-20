@@ -29,7 +29,6 @@
 			playsinline
 		/>
 		<Intersection bind:intersecting={intersection01} class="container pt-24 pb-8 min-h-screen relative flex flex-col">
-
 			<a class="w-20 mb-8 animate-scale" href="/">
 				<svg viewBox="0 0 90 90">
 					<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
@@ -40,7 +39,11 @@
 				</svg>
 			</a>
 
-			<div class="transition duration-1000 my-auto" class:opacity-0={!intersection01} class:translate-y-24={!intersection01}>
+			<div
+				class="transition duration-1000 my-auto"
+				class:opacity-0={!intersection01}
+				class:translate-y-24={!intersection01}
+			>
 				<h2 class="mb-8 uppercase text-lg md:text-3xl">Nuevo posicionamiento <strong>‘For Life’</strong></h2>
 				<h1 class="mb-8 uppercase font-display text-3xl md:text-6xl">
 					10 inventos que nos recuerdan que la seguridad es sinónimo de libertad
@@ -70,12 +73,17 @@
 				class:translate-y-24={!intersection02}
 			>
 				<p>
-					<span class="float-left font-bold -mt-2 mr-4 text-[#F8EBC0] leading-[.75] text-9xl md:text-[20rem]">E</span>sa seguridad juega un papel 
-					fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe. Por esta razón, acaba de lanzar 
-					<a rel="sponsored" class="underline" target="_blank" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/"
-						>For Life</a
-					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado en protegernos en la carretera, que no hay mayor definición de libertad que 
-					aquella que va de la mano de la nueva era de seguridad. Porque
+					<span class="float-left font-bold -mt-2 mr-4 text-[#F8EBC0] leading-[.75] text-9xl md:text-[20rem]">E</span>sa
+					seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe.
+					Por esta razón, acaba de lanzar
+					<a
+						rel="sponsored"
+						class="underline"
+						target="_blank"
+						href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/">For Life</a
+					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado
+					en protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la
+					nueva era de seguridad. Porque
 					<strong class="text-[#F8EBC0]"
 						>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad.</strong
 					>
@@ -97,8 +105,8 @@
 				class:opacity-0={!intersection03}
 				class:translate-y-24={!intersection03}
 			>
-				Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición de 
-				libertad que aquella que va de la mano de la nueva era de seguridad
+				Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición
+				de libertad que aquella que va de la mano de la nueva era de seguridad
 			</h3>
 		</Intersection>
 	</div>
@@ -112,16 +120,27 @@
 				piensan en el futuro con el objetivo de colisiones cero y una conducción autónoma.
 			</p>
 			<Intersection bind:intersecting={intersection04}>
-				<img
-					class="transition duration-1000 mx-auto mb-20 w-[38rem]"
+				<div
+					class="transition duration-1000 relative mx-auto my-32 w-[38rem]"
 					class:opacity-0={!intersection04}
 					class:scale-75={!intersection04}
-					src={image3}
-					alt=""
-				/>
+				>
+					<img class="bg-white rounded-full border-[.75rem] border-[#F8EBC0]" src={image3} alt="" />
+					<div class="absolute -inset-8">
+						<svg class="w-full h-full animate-rotate-l" viewBox="0 0 100 100">
+							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49"/>
+						</svg>
+					</div>
+					<div class="absolute -inset-16">
+						<svg class="w-full h-full animate-rotate-r" viewBox="0 0 100 100">
+							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49"/>
+						</svg>
+					</div>
+				</div>
 			</Intersection>
 			<p class="mx-auto mb-20 max-w-4xl font-bold text-xl md:text-3xl">
-				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la humanidad que han contribuido a este presente en el que la nueva era de seguridad es sinónimo de libertad.
+				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la
+				humanidad que han contribuido a este presente en el que la nueva era de seguridad es sinónimo de libertad.
 			</p>
 
 			<BlockImages image1={image4} image2={image5} />
@@ -184,20 +203,18 @@
 		</div>
 
 		<div class="absolute top-[62rem] left-0 flex items-center max-md:hidden">
-			<span class="w-14 border-t-4 border-white"></span>
+			<span class="w-14 border-t-4 border-white" />
 			<span class="w-5 h-5 bg-white rounded-full relative">
-				<span class="absolute inset-0 bg-white rounded-full animate-ping"></span>
+				<span class="absolute inset-0 bg-white rounded-full animate-ping" />
 			</span>
 		</div>
 
 		<div class="absolute top-[76rem] right-0 flex items-center max-md:hidden">
 			<span class="w-5 h-5 bg-white rounded-full relative">
-				<span class="absolute inset-0 bg-white rounded-full animate-ping"></span>
+				<span class="absolute inset-0 bg-white rounded-full animate-ping" />
 			</span>
-			<span class="w-14 border-t-4 border-white"></span>
+			<span class="w-14 border-t-4 border-white" />
 		</div>
-
-
 	</div>
 
 	<div class="py-20 relative mb-20">
@@ -256,20 +273,18 @@
 			</nav>
 		</div>
 
-
 		<div class="absolute -top-2 left-0 flex items-center">
-			<span class="w-14 border-t-4 border-[#F8EBC0]"></span>
+			<span class="w-14 border-t-4 border-[#F8EBC0]" />
 			<span class="w-5 h-5 bg-[#F8EBC0] rounded-full relative">
-				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping"></span>
+				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping" />
 			</span>
 		</div>
 
 		<div class="absolute -bottom-2 right-0 flex items-center">
 			<span class="w-5 h-5 bg-[#F8EBC0] rounded-full relative">
-				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping"></span>
+				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping" />
 			</span>
-			<span class="w-14 border-t-4 border-[#F8EBC0]"></span>
+			<span class="w-14 border-t-4 border-[#F8EBC0]" />
 		</div>
-
 	</div>
 </main>

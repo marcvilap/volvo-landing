@@ -21,8 +21,15 @@
 
 
 .animate-scale { animation: scale 1s alternate infinite ease-in }
+.animate-rotate-l { animation: rotate 10s infinite linear reverse }
+.animate-rotate-r { animation: rotate 10s infinite linear }
 
 @keyframes scale {
 from {transform: scale(.75) }
 to {transform: scale(1) }
+}
+
+@keyframes rotate {
+from {transform: rotate(0) }
+to {transform: rotate(360deg) }
 }
