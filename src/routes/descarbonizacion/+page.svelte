@@ -16,12 +16,29 @@
 	let intersection02 = false
 	let intersection03 = false
 	let intersection04 = false
+	let intersection05 = false
+	let intersection06 = false
+	let intersection07 = false
+	let intersection08 = false
+	let intersection09 = false
+	let intersection10 = false
+	let intersection11 = false
+	let intersection12 = false
+
+	const moveImg = (node: HTMLImageElement) => {
+		node.addEventListener('mousemove', event => {
+			node.style.transform = `translate3d(${event.pageX / -64}px,${event.pageY / -64}px,0) scale(1.05)`
+		})
+	}
 </script>
 
 <main class="overflow-hidden md:text-2xl">
 	<div class="relative text-center text-white">
-		<img class="absolute left-0 top-0 h-full w-full object-cover" src={landing2_01} alt="" />
-		<Intersection bind:intersecting={intersection01} class="container relative flex min-h-screen flex-col pb-8 pt-24">
+		<img use:moveImg class="absolute left-0 top-0 h-full w-full scale-105 object-cover" src={landing2_01} alt="" />
+		<Intersection
+			bind:intersecting={intersection01}
+			class="container pointer-events-none relative flex min-h-screen flex-col pb-8 pt-24"
+		>
 			<a class="animate-scale mb-8 w-20" href="/">
 				<svg viewBox="0 0 90 90">
 					<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
@@ -99,29 +116,43 @@
 
 	<div class="bg-[#F8EBC0] py-24">
 		<div class="container">
-			<div class="mx-auto mb-24 max-w-3xl">
-				<p class="mb-4">
-					Tanto el proceso productivo como la generación de la energía que alimenta dichos vehículos pueden formar parte
-					del problema si se emplean fuentes de origen fósil. Es en este punto en el que la <strong
-						>innovación llega para jugar un papel esencial, y Volvo Cars lo sabe</strong
-					>: proveer la energía limpia suficiente que no solo mueva a los coches del mañana sino que también impulse su
-					fabricación. Porque la sostenibilidad es tan importante como el costo y la calidad.
-				</p>
-				<p>
-					A continuación, vemos solo algunos ejemplos de cómo <strong
-						>tecnologías innovadoras están ayudando a descarbonizar la economía</strong
-					>, ya sea a corto o a medio plazo.
-				</p>
-			</div>
+			<Intersection bind:intersecting={intersection04}>
+				<div
+					class="mx-auto mb-24 max-w-3xl transition duration-1000"
+					class:opacity-0={!intersection04}
+					class:translate-y-24={!intersection04}
+				>
+					<p class="mb-4">
+						Tanto el proceso productivo como la generación de la energía que alimenta dichos vehículos pueden formar
+						parte del problema si se emplean fuentes de origen fósil. Es en este punto en el que la <strong
+							>innovación llega para jugar un papel esencial, y Volvo Cars lo sabe</strong
+						>: proveer la energía limpia suficiente que no solo mueva a los coches del mañana sino que también impulse
+						su fabricación. Porque la sostenibilidad es tan importante como el costo y la calidad.
+					</p>
+					<p>
+						A continuación, vemos solo algunos ejemplos de cómo <strong
+							>tecnologías innovadoras están ayudando a descarbonizar la economía</strong
+						>, ya sea a corto o a medio plazo.
+					</p>
+				</div>
+			</Intersection>
 
-			<div class="mb-24 grid gap-y-8 lg:grid-cols-2">
-				<div class="lg:pr-24">
+			<Intersection bind:intersecting={intersection05} class="mb-24 grid gap-y-8 lg:grid-cols-2">
+				<div
+					class="transition duration-1000 lg:pr-24"
+					class:opacity-0={!intersection05}
+					class:-translate-x-24={!intersection05}
+				>
 					<div>
 						<img class="relative z-10 -mb-[40%] w-full px-[14%]" src={landing2_03} alt="" />
 						<img class="w-full" src={landing2_04} alt="" />
 					</div>
 				</div>
-				<div class="relative">
+				<div
+					class="relative transition duration-1000"
+					class:opacity-0={!intersection05}
+					class:translate-x-24={!intersection05}
+				>
 					<span
 						class="text-7xl font-bold leading-[.7] text-[#07AAA2] md:text-[15rem] lg:absolute lg:-left-32 lg:-top-10"
 						>1</span
@@ -141,34 +172,44 @@
 						calor. Estos receptores son capaces de mantener la energía almacenada durante meses con pérdidas mínimas.
 					</p>
 				</div>
-			</div>
+			</Intersection>
 
-			<div class="mb-24 grid gap-y-8 lg:grid-cols-2">
-				<div class="relative lg:mt-96 lg:translate-x-24">
+			<Intersection bind:intersecting={intersection06} class="mb-24 grid gap-y-8 lg:grid-cols-2">
+				<div
+					class="relative transition duration-1000 lg:mt-96"
+					class:opacity-0={!intersection06}
+					class:-translate-x-24={!intersection06}
+				>
 					<span
-						class="text-7xl font-bold leading-[.7] text-[#07AAA2] md:text-[15rem] lg:absolute lg:-left-40 lg:-top-10"
+						class="text-7xl font-bold leading-[.7] text-[#07AAA2] md:text-[15rem] lg:absolute lg:-left-16 lg:-top-10"
 						>2</span
 					>
-					<h2 class="mb-4 font-display text-3xl md:text-5xl">Placas solares que flotan en el agua</h2>
-					<p class="mb-4">
-						A diferencia de los molinos de viento, las placas solares necesitan espacio. Mucho espacio. Y aunque en
-						países como España con grandes zonas despobladas no debería ser un problema, si puede suponer una pega en
-						áreas donde se pueda necesitar ese suelo para fines agrícolas.
-					</p>
-					<p class="mb-4">
-						Ya existen alternativas que proponen construir placas solares encima de infraestructuras cubiertas por agua
-						(desde acueductos hasta canales o embalses) de manera que se logran varios beneficios a la vez: los paneles
-						proporcionan sombra y evitan que el agua se evapore, esta enfría los paneles ayudando a una mayor eficiencia
-						energética y se libera espacio que se puede dedicar a la agricultura.
-					</p>
-					<p>
-						En España ya existen algunos ejemplos de esta tecnología, como en la Comunidad Valenciana, y en Portugal <strong
-							>se inauguró en 2022 la mayor planta europea fotovoltaica sobre un embalse</strong
-						>. Esta medida, además, aprovecha la conexión eléctrica de la central situada a escasos metros y que estas
-						plantas no utilizan de manera constante.
-					</p>
+					<div class="lg:translate-x-24">
+						<h2 class="mb-4 font-display text-3xl md:text-5xl">Placas solares que flotan en el agua</h2>
+						<p class="mb-4">
+							A diferencia de los molinos de viento, las placas solares necesitan espacio. Mucho espacio. Y aunque en
+							países como España con grandes zonas despobladas no debería ser un problema, si puede suponer una pega en
+							áreas donde se pueda necesitar ese suelo para fines agrícolas.
+						</p>
+						<p class="mb-4">
+							Ya existen alternativas que proponen construir placas solares encima de infraestructuras cubiertas por
+							agua (desde acueductos hasta canales o embalses) de manera que se logran varios beneficios a la vez: los
+							paneles proporcionan sombra y evitan que el agua se evapore, esta enfría los paneles ayudando a una mayor
+							eficiencia energética y se libera espacio que se puede dedicar a la agricultura.
+						</p>
+						<p>
+							En España ya existen algunos ejemplos de esta tecnología, como en la Comunidad Valenciana, y en Portugal <strong
+								>se inauguró en 2022 la mayor planta europea fotovoltaica sobre un embalse</strong
+							>. Esta medida, además, aprovecha la conexión eléctrica de la central situada a escasos metros y que estas
+							plantas no utilizan de manera constante.
+						</p>
+					</div>
 				</div>
-				<div class="lg:pl-24">
+				<div
+					class="transition duration-1000 lg:pl-24"
+					class:opacity-0={!intersection06}
+					class:translate-x-24={!intersection06}
+				>
 					<img class="relative -ml-[40%] w-full" src={landing2_05} alt="" />
 					<div class="-mt-[20%] pl-[20%]">
 						<img class="w-full" src={landing2_06} alt="" />
@@ -178,14 +219,22 @@
 						</p>
 					</div>
 				</div>
-			</div>
+			</Intersection>
 
-			<div class="grid gap-y-8 lg:grid-cols-2">
-				<div class="lg:pr-24">
+			<Intersection bind:intersecting={intersection07} class="grid gap-y-8 lg:grid-cols-2">
+				<div
+					class="transition duration-1000 lg:pr-24"
+					class:opacity-0={!intersection07}
+					class:-translate-x-24={!intersection07}
+				>
 					<img class="w-full pr-[20%]" src={landing2_07} alt="" />
 					<img class="-mt-[20%] w-full pl-[20%]" src={landing2_08} alt="" />
 				</div>
-				<div class="relative">
+				<div
+					class="relative transition duration-1000"
+					class:opacity-0={!intersection07}
+					class:translate-x-24={!intersection07}
+				>
 					<span
 						class="text-7xl font-bold leading-[.7] text-[#07AAA2] md:text-[15rem] lg:absolute lg:-left-40 lg:-top-10"
 						>3</span
@@ -208,61 +257,83 @@
 						<strong>2,5 millones de toneladas mediante iniciativas circulares.</strong>
 					</p>
 				</div>
-			</div>
+			</Intersection>
 		</div>
 	</div>
 
 	<div class="py-24">
 		<div class="container">
-			<div class="grid items-center gap-8 gap-x-24 lg:grid-cols-2">
-				<div>
+			<Intersection bind:intersecting={intersection08} class="grid items-center gap-8 gap-x-24 lg:grid-cols-2">
+				<div
+					class="transition duration-1000"
+					class:opacity-0={!intersection08}
+					class:-translate-x-24={!intersection08}
+					class:-skew-x-12={!intersection08}
+					class:-skew-y-12={!intersection08}
+				>
 					<h3 class="mb-4 text-5xl font-bold">
 						“Si queremos alcanzar nuestros objetivos, tenemos que pasarnos a la economía circular”
 					</h3>
 					<p class="text-base font-bold">Anders Kärrberg, director de sostenibilidad global</p>
 				</div>
-				<div>
+				<div class="transition duration-1000" class:opacity-0={!intersection08} class:translate-x-24={!intersection08}>
 					<img src={landing2_09} alt="" />
 				</div>
-			</div>
+			</Intersection>
 		</div>
 	</div>
 
 	<div class="bg-[#F8EBC0] py-24">
 		<div class="container">
-			<div class="mx-auto mb-24 max-w-3xl text-center">
-				<p>
-					El hidrógeno que se utiliza en la actualidad se extrae del gas natural, el carbón o de la biomasa, con una
-					huella de carbono notable. Pero es posible producir hidrógeno a partir de un elemento tan abundante como el
-					agua. Mediante electrólisis, que también se debe producir con energías renovables, se pueden separar las
-					moléculas de hidrógeno de las de oxígeno presentes en el agua. Este proceso <a
-						class="text-[#07AAA2] underline"
-						target="_blank"
-						href="https://link.com">abriría la puerta a una forma de energía limpia</a
-					> y para la que, en España, ya tenemos proyectos aprobados para construir gasoductos que puedan transportar este
-					gas a todo el continente europeo.
-				</p>
-			</div>
+			<Intersection bind:intersecting={intersection09}>
+				<div
+					class="mx-auto mb-24 max-w-3xl text-center transition duration-1000"
+					class:opacity-0={!intersection09}
+					class:translate-y-24={!intersection09}
+				>
+					<p>
+						El hidrógeno que se utiliza en la actualidad se extrae del gas natural, el carbón o de la biomasa, con una
+						huella de carbono notable. Pero es posible producir hidrógeno a partir de un elemento tan abundante como el
+						agua. Mediante electrólisis, que también se debe producir con energías renovables, se pueden separar las
+						moléculas de hidrógeno de las de oxígeno presentes en el agua. Este proceso <a
+							class="text-[#07AAA2] underline"
+							target="_blank"
+							href="https://link.com">abriría la puerta a una forma de energía limpia</a
+						> y para la que, en España, ya tenemos proyectos aprobados para construir gasoductos que puedan transportar este
+						gas a todo el continente europeo.
+					</p>
+				</div>
+			</Intersection>
 
-			<div class="relative mx-auto my-32 max-w-[38rem]">
-				<img class="rounded-full border-[.75rem] border-[#07AAA2] bg-white" src={landing2_10} alt="" />
-				<div class="absolute -inset-8">
-					<svg class="animate-rotate-l h-full w-full" viewBox="0 0 100 100">
-						<circle fill="none" stroke="#07AAA2" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49" />
-					</svg>
+			<Intersection bind:intersecting={intersection10}>
+				<div
+					class="relative mx-auto my-32 max-w-[38rem] transition duration-1000"
+					class:opacity-0={!intersection10}
+					class:scale-50={!intersection10}
+				>
+					<img class="rounded-full border-[.75rem] border-[#07AAA2] bg-white" src={landing2_10} alt="" />
+					<div class="absolute -inset-8">
+						<svg class="animate-rotate-l h-full w-full" viewBox="0 0 100 100">
+							<circle fill="none" stroke="#07AAA2" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49" />
+						</svg>
+					</div>
+					<div class="absolute -inset-16">
+						<svg class="animate-rotate-r h-full w-full" viewBox="0 0 100 100">
+							<circle fill="none" stroke="#07AAA2" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49" />
+						</svg>
+					</div>
 				</div>
-				<div class="absolute -inset-16">
-					<svg class="animate-rotate-r h-full w-full" viewBox="0 0 100 100">
-						<circle fill="none" stroke="#07AAA2" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49" />
-					</svg>
-				</div>
-			</div>
+			</Intersection>
 		</div>
 	</div>
 	<div class="relative flex min-h-screen items-center bg-gray-800 py-24 text-white">
 		<img class="absolute left-0 top-0 h-full w-full object-cover" src={landing2_11} alt="" />
-		<div class="relative px-8 xl:px-24">
-			<div class="max-w-md text-xl">
+		<Intersection bind:intersecting={intersection11} class="relative px-8 xl:px-24">
+			<div
+				class="max-w-md text-xl transition duration-1000"
+				class:opacity-0={!intersection11}
+				class:-translate-x-24={!intersection11}
+			>
 				<p class="mb-4">
 					El sector de la automoción es uno en los que mejor se puede observar la importancia de la innovación en la
 					producción energética. No se trata solo de que los vehículos que circulan por las carreteras no contaminen,
@@ -279,17 +350,21 @@
 					que proviene de combustibles fósiles.
 				</p>
 			</div>
-		</div>
+		</Intersection>
 	</div>
 	<div class="relative flex min-h-screen items-center bg-gray-900 py-24 text-white">
 		<img class="absolute left-0 top-0 h-full w-full object-cover" src={landing2_12} alt="" />
-		<div class="container relative text-center">
-			<p class="mx-auto max-w-4xl">
+		<Intersection bind:intersecting={intersection12} class="container relative text-center">
+			<p
+				class="mx-auto max-w-4xl transition duration-1000"
+				class:opacity-0={!intersection12}
+				class:translate-y-24={!intersection12}
+			>
 				La innovación no solo es necesaria en la carretera sino en toda la cadena productiva. Desde las factorías hasta
 				las fuentes de energía, la única manera de alcanzar un futuro libre de emisiones de CO2 es actuando sobre todo
 				el ciclo de fabricación. Y para acelerar el crecimiento sostenible, Volvo Cars abrirá una nueva fábrica de
 				vehículos eléctricos en Eslovaquia, un paso fundamental para el camino hacia la electrificación total para 2030.
 			</p>
-		</div>
+		</Intersection>
 	</div>
 </main>
