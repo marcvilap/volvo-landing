@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		screens: {
@@ -17,8 +18,7 @@ module.exports = {
 				sans: '"Bradesco Sans", sans-serif',
 				display: '"Globoface Gothic Display 2001", sans-serif',
 			},
-			colors: {
-			}
+			colors: {},
 		},
 	},
-}
+} satisfies Config

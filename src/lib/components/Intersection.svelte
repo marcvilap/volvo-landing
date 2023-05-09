@@ -8,7 +8,7 @@
 		})
 		observer.observe(node)
 		return {
-			destroy: () => observer.disconnect()
+			destroy: () => observer.disconnect(),
 		}
 	}
 </script>

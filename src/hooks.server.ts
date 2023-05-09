@@ -11,14 +11,14 @@ const minification_options = {
 	ignoreCustomComments: [/^#/],
 	minifyCSS: true,
 	minifyJS: true,
-	removeAttributeQuotes: true,
+	removeAttributeQuotes: false,
 	removeComments: false, // some hydration code needs comments, so leave them in
-	removeOptionalTags: true,
+	removeOptionalTags: false,
 	removeRedundantAttributes: true,
 	removeScriptTypeAttributes: true,
 	removeStyleLinkTypeAttributes: true,
-	sortAttributes: true,
-	sortClassName: true,
+	sortAttributes: false,
+	sortClassName: false,
 } satisfies Options
 
 export const handle = (async ({ event, resolve }) => {
@@ -26,7 +26,9 @@ export const handle = (async ({ event, resolve }) => {
 	return await resolve(event, {
 		transformPageChunk: async ({ html, done }) => {
 			page += html
-			return done && building ? await minify(page, minification_options) : page
-		}
+			if (done) {
+				return building ? await minify(page, minification_options) : page
+			}
+		},
 	})
 }) satisfies Handle

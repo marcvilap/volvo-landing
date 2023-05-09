@@ -18,7 +18,7 @@
 	let intersection04 = false
 
 	import { onMount } from 'svelte'
-	import Swiper, {} from 'swiper'
+	import Swiper from 'swiper'
 	import 'swiper/css'
 
 	let theSwiper: HTMLDivElement
@@ -28,7 +28,7 @@
 			modules: [],
 			slidesPerView: 1,
 			spaceBetween: 32,
-			loop:true,
+			loop: true,
 			breakpoints: {
 				720: {
 					slidesPerView: 2,
@@ -38,24 +38,23 @@
 					slidesPerView: 3,
 					spaceBetween: 32,
 				},
-			}
+			},
 		})
 	})
-
 </script>
 
-<main class="overflow-hidden text-white bg-[#057C76] md:text-2xl">
+<main class="overflow-hidden bg-[#057C76] text-white md:text-2xl">
 	<div class="relative text-center">
 		<video
-			class="absolute left-0 top-0 w-full h-full object-cover opacity-80"
+			class="absolute left-0 top-0 h-full w-full object-cover opacity-80"
 			src={video}
 			autoplay
 			loop
 			muted
 			playsinline
 		/>
-		<Intersection bind:intersecting={intersection01} class="container pt-24 pb-8 min-h-screen relative flex flex-col">
-			<a class="w-20 mb-8 animate-scale" href="/">
+		<Intersection bind:intersecting={intersection01} class="container relative flex min-h-screen flex-col pb-8 pt-24">
+			<a class="animate-scale mb-8 w-20" href="/">
 				<svg viewBox="0 0 90 90">
 					<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
 					<path
@@ -66,12 +65,12 @@
 			</a>
 
 			<div
-				class="transition duration-1000 my-auto"
+				class="my-auto transition duration-1000"
 				class:opacity-0={!intersection01}
 				class:translate-y-24={!intersection01}
 			>
-				<h2 class="mb-8 uppercase text-lg md:text-3xl">Nuevo posicionamiento <strong>‘For Life’</strong></h2>
-				<h1 class="mb-8 uppercase font-display text-3xl md:text-6xl">
+				<h2 class="mb-8 text-lg uppercase md:text-3xl">Nuevo posicionamiento <strong>‘For Life’</strong></h2>
+				<h1 class="mb-8 font-display text-3xl uppercase md:text-6xl">
 					10 inventos que nos recuerdan que la seguridad es sinónimo de libertad
 				</h1>
 				<p class="mx-auto max-w-4xl">
@@ -81,7 +80,7 @@
 				</p>
 			</div>
 
-			<a class="mt-8 mx-auto w-12 animate-bounce" href="#down">
+			<a class="mx-auto mt-8 w-12 animate-bounce" href="#down">
 				<svg viewBox="0 0 56 74" fill="#F8EBC0">
 					<path
 						d="m46.7.4 8.9 9a1.5 1.5 0 0 1 0 2L29 38.3c-.5.6-1.5.6-2 0L.4 11.5a1.5 1.5 0 0 1 0-2.1l9-9c.5-.5 1.4-.5 2 0L28 17.1 44.6.4a1.5 1.5 0 0 1 2 0Zm-1 3.2L29 20.3a1.5 1.5 0 0 1-2 0L10.4 3.6l-6.8 6.8L28 35l24.4-24.6-6.8-6.8Zm1 32.2 8.9 9a1.5 1.5 0 0 1 0 2L29 73.7c-.5.5-1.5.5-2 0L.4 46.9a1.5 1.5 0 0 1 0-2.2l9-8.9c.5-.6 1.4-.6 2 0L28 52.5l16.6-16.7c.6-.6 1.5-.6 2 0Zm-1 3.2L29 55.7a1.5 1.5 0 0 1-2 0L10.4 39l-6.8 6.8L28 70.4l24.4-24.6-6.8-6.8Z"
@@ -94,12 +93,12 @@
 	<div id="down" class="py-20">
 		<Intersection bind:intersecting={intersection02} class="container">
 			<div
-				class="transition duration-1000 mx-auto max-w-4xl"
+				class="mx-auto max-w-4xl transition duration-1000"
 				class:opacity-0={!intersection02}
 				class:translate-y-24={!intersection02}
 			>
 				<p>
-					<span class="float-left font-bold -mt-2 mr-4 text-[#F8EBC0] leading-[.75] text-9xl md:text-[20rem]">E</span>sa
+					<span class="float-left -mt-2 mr-4 text-9xl font-bold leading-[.75] text-[#F8EBC0] md:text-[20rem]">E</span>sa
 					seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe.
 					Por esta razón, acaba de lanzar
 					<a
@@ -123,11 +122,11 @@
 		</Intersection>
 	</div>
 
-	<div class="py-32 relative text-center bg-neutral-600">
-		<img class="absolute left-0 top-0 w-full h-full object-cover opacity-50" src={image2} alt="" />
+	<div class="relative bg-neutral-600 py-32 text-center">
+		<img class="absolute left-0 top-0 h-full w-full object-cover opacity-50" src={image2} alt="" />
 		<Intersection bind:intersecting={intersection03} class="container relative">
 			<h3
-				class="transition duration-1000 font-bold text-2xl md:text-5xl"
+				class="text-2xl font-bold transition duration-1000 md:text-5xl"
 				class:opacity-0={!intersection03}
 				class:translate-y-24={!intersection03}
 			>
@@ -137,9 +136,9 @@
 		</Intersection>
 	</div>
 
-	<div class="pt-20 relative">
+	<div class="relative pt-20">
 		<div class="container">
-			<p class="mx-auto max-w-4xl mb-20">
+			<p class="mx-auto mb-20 max-w-4xl">
 				Con el lema ¿y si sentirte seguro te hiciese sentir verdaderamente libre? Volvo Cars nos invita a una nueva era
 				de seguridad para todos, para disfrutar de la libertad más segura. Así fue como empezaron siendo los pioneros
 				con el cinturón de seguridad antaño, continuaron innovando en la protección de las personas en el presente, y
@@ -147,24 +146,24 @@
 			</p>
 			<Intersection bind:intersecting={intersection04}>
 				<div
-					class="transition duration-1000 relative mx-auto my-32 w-[38rem]"
+					class="relative mx-auto my-32 w-[38rem] transition duration-1000"
 					class:opacity-0={!intersection04}
 					class:scale-75={!intersection04}
 				>
-					<img class="bg-white rounded-full border-[.75rem] border-[#F8EBC0]" src={image3} alt="" />
+					<img class="rounded-full border-[.75rem] border-[#F8EBC0] bg-white" src={image3} alt="" />
 					<div class="absolute -inset-8">
-						<svg class="w-full h-full animate-rotate-l" viewBox="0 0 100 100">
+						<svg class="animate-rotate-l h-full w-full" viewBox="0 0 100 100">
 							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49" />
 						</svg>
 					</div>
 					<div class="absolute -inset-16">
-						<svg class="w-full h-full animate-rotate-r" viewBox="0 0 100 100">
+						<svg class="animate-rotate-r h-full w-full" viewBox="0 0 100 100">
 							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49" />
 						</svg>
 					</div>
 				</div>
 			</Intersection>
-			<p class="mx-auto mb-20 max-w-4xl font-bold text-xl md:text-3xl">
+			<p class="mx-auto mb-20 max-w-4xl text-xl font-bold md:text-3xl">
 				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la
 				humanidad que han contribuido a este presente en el que la nueva era de seguridad es sinónimo de libertad.
 			</p>
@@ -228,31 +227,31 @@
 			/>
 		</div>
 
-		<div class="absolute top-[62rem] left-0 flex items-center max-md:hidden">
+		<div class="absolute left-0 top-[62rem] flex items-center max-md:hidden">
 			<span class="w-14 border-t-4 border-white" />
-			<span class="w-5 h-5 bg-white rounded-full relative">
-				<span class="absolute inset-0 bg-white rounded-full animate-ping" />
+			<span class="relative h-5 w-5 rounded-full bg-white">
+				<span class="absolute inset-0 animate-ping rounded-full bg-white" />
 			</span>
 		</div>
 
-		<div class="absolute top-[76rem] right-0 flex items-center max-md:hidden">
-			<span class="w-5 h-5 bg-white rounded-full relative">
-				<span class="absolute inset-0 bg-white rounded-full animate-ping" />
+		<div class="absolute right-0 top-[76rem] flex items-center max-md:hidden">
+			<span class="relative h-5 w-5 rounded-full bg-white">
+				<span class="absolute inset-0 animate-ping rounded-full bg-white" />
 			</span>
 			<span class="w-14 border-t-4 border-white" />
 		</div>
 	</div>
 
-	<div class="py-20 relative mb-20">
-		<img class="absolute left-0 top-0 w-full h-full object-cover opacity-80" src={image8} alt="" />
+	<div class="relative mb-20 py-20">
+		<img class="absolute left-0 top-0 h-full w-full object-cover opacity-80" src={image8} alt="" />
 		<div class="container relative">
 			<div class="swiper" bind:this={theSwiper}>
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-[#07AAA2]">
+						<div class="relative overflow-hidden rounded-full border-8 border-[#07AAA2]">
 							<img class="w-full" src={item1} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-[#07AAA2]/50">
-								<h4 class="text-4xl font-display">FOR LIFE</h4>
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-[#07AAA2]/50 p-8 text-center">
+								<h4 class="font-display text-4xl">FOR LIFE</h4>
 								<p class="text-lg font-bold">
 									El nuevo posicionamiento de Volvo que nos hace recordar los inventos que cambiaron la seguridad para
 									siempre
@@ -261,9 +260,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -273,9 +272,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -285,9 +284,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -297,9 +296,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -309,9 +308,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -321,9 +320,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -333,9 +332,9 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="overflow-hidden relative rounded-full border-8 border-gray-600">
+						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
 							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col justify-center p-8 text-center items-center bg-gray-600/50">
+							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
 								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
 									<path
 										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
@@ -347,7 +346,7 @@
 				</div>
 			</div>
 
-			<nav class="flex gap-12 justify-center mt-12">
+			<nav class="mt-12 flex justify-center gap-12">
 				<button class="w-8" on:click={() => swiper.slidePrev()}>
 					<svg fill="currentColor" viewBox="0 0 64 44">
 						<path
@@ -367,14 +366,14 @@
 
 		<div class="absolute -top-2 left-0 flex items-center">
 			<span class="w-14 border-t-4 border-[#F8EBC0]" />
-			<span class="w-5 h-5 bg-[#F8EBC0] rounded-full relative">
-				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping" />
+			<span class="relative h-5 w-5 rounded-full bg-[#F8EBC0]">
+				<span class="absolute inset-0 animate-ping rounded-full bg-[#F8EBC0]" />
 			</span>
 		</div>
 
 		<div class="absolute -bottom-2 right-0 flex items-center">
-			<span class="w-5 h-5 bg-[#F8EBC0] rounded-full relative">
-				<span class="absolute inset-0 bg-[#F8EBC0] rounded-full animate-ping" />
+			<span class="relative h-5 w-5 rounded-full bg-[#F8EBC0]">
+				<span class="absolute inset-0 animate-ping rounded-full bg-[#F8EBC0]" />
 			</span>
 			<span class="w-14 border-t-4 border-[#F8EBC0]" />
 		</div>

@@ -1,35 +1,74 @@
-@font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Light.woff2) format('woff2'); }
+@font-face {
+	font-family: 'Bradesco Sans';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(../src/lib/assets/fonts/Bradesco-Sans-Light.woff2) format('woff2');
+}
 /* @font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Semibold.woff2) format('woff2'); } */
-@font-face { font-family: 'Bradesco Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(../src/lib/assets/fonts/Bradesco-Sans-Bold.woff2) format('woff2'); }
-@font-face { font-family: 'Globoface Gothic Display 2001'; font-style: normal; font-weight: 700; font-display: swap; src: url(../src/lib/assets/fonts/Globoface-Gothic-Display-2001.woff2) format('woff2'); }
+@font-face {
+	font-family: 'Bradesco Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../src/lib/assets/fonts/Bradesco-Sans-Bold.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Globoface Gothic Display 2001';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../src/lib/assets/fonts/Globoface-Gothic-Display-2001.woff2) format('woff2');
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-	@media (max-width: 400px) { html { font-size: 4vw } }
-	html { @apply scroll-smooth antialiased }
+	@media (max-width: 400px) {
+		html {
+			font-size: 4vw;
+		}
+	}
+	html {
+		@apply scroll-smooth antialiased;
+	}
 }
 
 @layer components {
 }
 
 @layer utilities {
-	.bg-footer { background-image: url(./lib/assets/images/footer.png) }
+	.bg-footer {
+		background-image: url(./lib/assets/images/footer.png);
+	}
 }
 
-
-.animate-scale { animation: scale 1s alternate infinite ease-in }
-.animate-rotate-l { animation: rotate 10s infinite linear reverse }
-.animate-rotate-r { animation: rotate 10s infinite linear }
+.animate-scale {
+	animation: scale 1s alternate infinite ease-in;
+}
+.animate-rotate-l {
+	animation: rotate 10s infinite linear reverse;
+}
+.animate-rotate-r {
+	animation: rotate 10s infinite linear;
+}
 
 @keyframes scale {
-from {transform: scale(.75) }
-to {transform: scale(1) }
+	from {
+		transform: scale(0.75);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
 @keyframes rotate {
-from {transform: rotate(0) }
-to {transform: rotate(360deg) }
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

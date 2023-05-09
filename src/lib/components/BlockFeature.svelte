@@ -8,9 +8,9 @@
 </script>
 
 <Intersection bind:intersecting>
-	<div class="relative md:flex gap-8 mb-20 max-w-4xl" class:ml-auto={right}>
+	<div class="relative mb-20 max-w-4xl gap-8 md:flex" class:ml-auto={right}>
 		<span
-			class="transition duration-1000 leading-[.7] font-bold text-[#F8EBC0] text-7xl md:text-[15rem]"
+			class="text-7xl font-bold leading-[.7] text-[#F8EBC0] transition duration-1000 md:text-[15rem]"
 			class:opacity-0={!intersecting}
 			class:-translate-x-24={!intersecting}>{number}</span
 		>
