@@ -31,8 +31,18 @@
 			font-size: 4vw;
 		}
 	}
+	@media (min-width: 1281px) {
+		html {
+			font-size: 1.25vw;
+		}
+	}
+	@media (min-width: 1920px) {
+		html {
+			font-size: 24px;
+		}
+	}
 	html {
-		@apply scroll-smooth antialiased;
+		@apply scroll-smooth;
 	}
 }
 
@@ -71,4 +81,25 @@
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+.prose p {
+	@apply mb-6;
+}
+.prose-capitalize p:first-child::first-letter {
+	@apply float-left -mt-2 mr-4 text-9xl font-bold leading-[.9] text-[#07AAA2] md:text-[12rem];
+}
+
+.prose a {
+	@apply text-[#07AAA2] underline;
+}
+
+.prose > *:last-child {
+	@apply mb-0;
+}
+
+.prose-dark p:first-child::first-letter,
+.prose-dark a,
+.prose-dark strong {
+	@apply text-[#F8EBC0];
 }

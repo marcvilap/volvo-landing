@@ -1,117 +1,55 @@
 <script lang="ts">
-	import video from '$lib/assets/videos/video.mp4'
-	import image2 from '$lib/assets/images/image2.jpg'
-	import image3 from '$lib/assets/images/image3.svg'
-	import image4 from '$lib/assets/images/image4.jpg'
-	import image5 from '$lib/assets/images/image5.jpg'
-	import image6 from '$lib/assets/images/image6.jpg'
-	import image7 from '$lib/assets/images/image7.jpg'
-	import image8 from '$lib/assets/images/image8.jpg'
-	import item1 from '$lib/assets/images/item1.png'
-	import item2 from '$lib/assets/images/item2.png'
+	import video01 from '$lib/assets/videos/video.mp4'
+	import forlife01 from '$lib/assets/images/forlife01.jpg'
+	import forlife02 from '$lib/assets/images/forlife02.jpg'
+	import forlife03 from '$lib/assets/images/forlife03.jpg'
+	import forlife04 from '$lib/assets/images/forlife04.jpg'
+	import forlife05 from '$lib/assets/images/forlife05.jpg'
+
+	import circle01 from '$lib/assets/images/circle01.svg'
 	import Intersection from '$lib/components/Intersection.svelte'
+	import BlockHero from '$lib/components/BlockHero.svelte'
+	import BlockTextBanner from '$lib/components/BlockTextBanner.svelte'
 	import BlockFeature from '$lib/components/BlockFeature.svelte'
 	import BlockImages from '$lib/components/BlockImages.svelte'
+	import BlockCircle from '$lib/components/BlockCircle.svelte'
+	import BlockNav from '$lib/components/BlockNav.svelte'
 	let intersection01 = false
-	let intersection02 = false
-	let intersection03 = false
-	let intersection04 = false
-
-	import { onMount } from 'svelte'
-	import Swiper from 'swiper'
-	import 'swiper/css'
-
-	let theSwiper: HTMLDivElement
-	let swiper: Swiper
-	onMount(() => {
-		swiper = new Swiper(theSwiper, {
-			modules: [],
-			slidesPerView: 1,
-			spaceBetween: 32,
-			loop: true,
-			breakpoints: {
-				720: {
-					slidesPerView: 2,
-					spaceBetween: 32,
-				},
-				1024: {
-					slidesPerView: 3,
-					spaceBetween: 32,
-				},
-			},
-		})
-	})
 </script>
 
-<main class="overflow-hidden bg-[#057C76] text-white md:text-2xl">
-	<div class="relative text-center">
-		<video
-			class="absolute left-0 top-0 h-full w-full object-cover opacity-80"
-			src={video}
-			autoplay
-			loop
-			muted
-			playsinline
-		/>
-		<Intersection bind:intersecting={intersection01} class="container relative flex min-h-screen flex-col pb-8 pt-24">
-			<a class="animate-scale mb-8 w-20" href="/">
-				<svg viewBox="0 0 90 90">
-					<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
-					<path
-						fill="#034541"
-						d="M64.9 62.98H34.3l.01-3.23h27.35V40.17l-16.15-14.8-16.28 14.8V54.6H26V38.74L45.51 21 64.9 38.75v24.23Zm-33.2-5.77v5.7H26v-5.7h5.7Z"
-					/>
-				</svg>
-			</a>
+<svelte:head>
+	<style>
+		body {
+			background: #057c76;
+			color: #fff;
+		}
+	</style>
+</svelte:head>
 
+<main class="overflow-hidden">
+	<BlockHero
+		video={video01}
+		text1="Nuevo posicionamiento ‘For Life’"
+		text2="10 inventos que nos recuerdan que la seguridad es sinónimo de libertad"
+		text3=""
+		text4="Seguridad es un concepto que abarca muchas áreas, desde las medidas que tomamos cada día para evitar males mayores hasta aspectos tan cotidianos como los semáforos en las calles o el cinturón de seguridad. Tecnologías con las que ahora mismo sería impensable vivir."
+	/>
+
+	<div class="py-24">
+		<Intersection bind:intersecting={intersection01} class="container">
 			<div
-				class="my-auto transition duration-1000"
+				class="prose prose-capitalize prose-dark mx-auto max-w-xl transition duration-1000"
 				class:opacity-0={!intersection01}
 				class:translate-y-24={!intersection01}
 			>
-				<h2 class="mb-8 text-lg uppercase md:text-3xl">Nuevo posicionamiento <strong>‘For Life’</strong></h2>
-				<h1 class="mb-8 font-display text-3xl uppercase md:text-6xl">
-					10 inventos que nos recuerdan que la seguridad es sinónimo de libertad
-				</h1>
-				<p class="mx-auto max-w-4xl">
-					Seguridad es un concepto que abarca muchas áreas, desde las medidas que tomamos cada día para evitar males
-					mayores hasta aspectos tan cotidianos como los semáforos en las calles o el cinturón de seguridad. Tecnologías
-					con las que ahora mismo sería impensable vivir.
-				</p>
-			</div>
-
-			<a class="mx-auto mt-8 w-12 animate-bounce" href="#down">
-				<svg viewBox="0 0 56 74" fill="#F8EBC0">
-					<path
-						d="m46.7.4 8.9 9a1.5 1.5 0 0 1 0 2L29 38.3c-.5.6-1.5.6-2 0L.4 11.5a1.5 1.5 0 0 1 0-2.1l9-9c.5-.5 1.4-.5 2 0L28 17.1 44.6.4a1.5 1.5 0 0 1 2 0Zm-1 3.2L29 20.3a1.5 1.5 0 0 1-2 0L10.4 3.6l-6.8 6.8L28 35l24.4-24.6-6.8-6.8Zm1 32.2 8.9 9a1.5 1.5 0 0 1 0 2L29 73.7c-.5.5-1.5.5-2 0L.4 46.9a1.5 1.5 0 0 1 0-2.2l9-8.9c.5-.6 1.4-.6 2 0L28 52.5l16.6-16.7c.6-.6 1.5-.6 2 0Zm-1 3.2L29 55.7a1.5 1.5 0 0 1-2 0L10.4 39l-6.8 6.8L28 70.4l24.4-24.6-6.8-6.8Z"
-					/>
-				</svg>
-			</a>
-		</Intersection>
-	</div>
-
-	<div id="down" class="py-20">
-		<Intersection bind:intersecting={intersection02} class="container">
-			<div
-				class="mx-auto max-w-4xl transition duration-1000"
-				class:opacity-0={!intersection02}
-				class:translate-y-24={!intersection02}
-			>
 				<p>
-					<span class="float-left -mt-2 mr-4 text-9xl font-bold leading-[.75] text-[#F8EBC0] md:text-[20rem]">E</span>sa
-					seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo sabe.
-					Por esta razón, acaba de lanzar
-					<a
-						rel="sponsored"
-						class="underline"
-						target="_blank"
-						href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/">For Life</a
-					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado
-					en protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la
-					nueva era de seguridad. Porque
-					<strong class="text-[#F8EBC0]"
-						>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad.</strong
-					>
+					Esa seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo
+					sabe. Por esta razón, acaba de lanzar
+					<a target="_blank" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/">For Life</a>, su
+					nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado en
+					protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la nueva
+					era de seguridad. Porque
+					<strong>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad.</strong>
 				</p>
 				<p>
 					Incluso al montar en un coche podemos sentir esa sensación de seguridad. El simple gesto de abrocharse el
@@ -122,53 +60,33 @@
 		</Intersection>
 	</div>
 
-	<div class="relative bg-neutral-600 py-32 text-center">
-		<img class="absolute left-0 top-0 h-full w-full object-cover opacity-50" src={image2} alt="" />
-		<Intersection bind:intersecting={intersection03} class="container relative">
-			<h3
-				class="text-2xl font-bold transition duration-1000 md:text-5xl"
-				class:opacity-0={!intersection03}
-				class:translate-y-24={!intersection03}
-			>
-				Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición
-				de libertad que aquella que va de la mano de la nueva era de seguridad
-			</h3>
-		</Intersection>
-	</div>
+	<BlockTextBanner
+		image={forlife01}
+		text="Volvo Cars acaba de lanzar For Life, su nuevo posicionamiento en el que nos recuerda que no hay mayor definición de libertad que aquella que va de la mano de la nueva era de seguridad"
+	/>
 
-	<div class="relative pt-20">
+	<div class="relative pt-24">
 		<div class="container">
-			<p class="mx-auto mb-20 max-w-4xl">
+			<p class="mx-auto max-w-xl">
 				Con el lema ¿y si sentirte seguro te hiciese sentir verdaderamente libre? Volvo Cars nos invita a una nueva era
 				de seguridad para todos, para disfrutar de la libertad más segura. Así fue como empezaron siendo los pioneros
 				con el cinturón de seguridad antaño, continuaron innovando en la protección de las personas en el presente, y
 				piensan en el futuro con el objetivo de colisiones cero y una conducción autónoma.
 			</p>
-			<Intersection bind:intersecting={intersection04}>
-				<div
-					class="relative mx-auto my-32 w-[38rem] transition duration-1000"
-					class:opacity-0={!intersection04}
-					class:scale-75={!intersection04}
-				>
-					<img class="rounded-full border-[.75rem] border-[#F8EBC0] bg-white" src={image3} alt="" />
-					<div class="absolute -inset-8">
-						<svg class="animate-rotate-l h-full w-full" viewBox="0 0 100 100">
-							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="6,3" cx="50" cy="50" r="49" />
-						</svg>
-					</div>
-					<div class="absolute -inset-16">
-						<svg class="animate-rotate-r h-full w-full" viewBox="0 0 100 100">
-							<circle fill="none" stroke="#F8EBC0" stroke-width="2" stroke-dasharray="10,5" cx="50" cy="50" r="49" />
-						</svg>
-					</div>
-				</div>
-			</Intersection>
-			<p class="mx-auto mb-20 max-w-4xl text-xl font-bold md:text-3xl">
+
+			<div class="pb-24" />
+
+			<BlockCircle image={circle01} color="#F8EBC0" />
+
+			<div class="pb-24" />
+
+			<p class="mx-auto mb-24 max-w-xl text-xl font-bold">
 				Para hacer homenaje a For Life, la nueva plataforma de Volvo Cars, repasamos algunos de los avances de la
 				humanidad que han contribuido a este presente en el que la nueva era de seguridad es sinónimo de libertad.
 			</p>
 
-			<BlockImages image1={image4} image2={image5} />
+			<BlockImages image1={forlife02} image2={forlife03} />
+
 			<BlockFeature
 				number="1"
 				title="Penicilina"
@@ -196,7 +114,7 @@
 				title="Vacunas"
 				description="La pandemia del Covid-19 nos ha recordado la importancia de las vacunas, no solo para salvar vidas sino para vivirlas con total normalidad. Los primeros ejemplos datan de finales del siglo XVIII (la de la viruela) y todos parten de un mismo principio: generar inmunidad contra una enfermedad mediante la estimulación de la producción de anticuerpos."
 			/>
-			<BlockImages image1={image6} image2={image7} />
+			<BlockImages image1={forlife04} image2={forlife05} />
 			<BlockFeature
 				right
 				number="6"
@@ -242,140 +160,5 @@
 		</div>
 	</div>
 
-	<div class="relative mb-20 py-20">
-		<img class="absolute left-0 top-0 h-full w-full object-cover opacity-80" src={image8} alt="" />
-		<div class="container relative">
-			<div class="swiper" bind:this={theSwiper}>
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-[#07AAA2]">
-							<img class="w-full" src={item1} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-[#07AAA2]/50 p-8 text-center">
-								<h4 class="font-display text-4xl">FOR LIFE</h4>
-								<p class="text-lg font-bold">
-									El nuevo posicionamiento de Volvo que nos hace recordar los inventos que cambiaron la seguridad para
-									siempre
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="relative overflow-hidden rounded-full border-8 border-gray-600">
-							<img class="w-full" src={item2} alt="" />
-							<div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-600/50 p-8 text-center">
-								<svg class="w-16" fill="currentColor" viewBox="0 0 75 102">
-									<path
-										d="M8.8 102c-1.7-.5-3.4-1-4.9-2.2a9.9 9.9 0 0 1-3.9-8V59a10 10 0 0 1 10.4-10.1h53.2a10 10 0 0 1 10.4 10v33c0 5-3.4 8.9-8.4 10l-.4.1H8.8Zm24.8-22v5c0 1.8 1 3 2.4 3.5 2.3.6 4.3-1 4.4-3.5v-9.5c0-.8.1-1.2.8-1.7a6.5 6.5 0 0 0 2-7.6 6.8 6.8 0 0 0-6.4-4.2c-3 .2-5.3 2-6.2 4.7-.9 2.7 0 5.4 2.5 7.3.2.3.5.7.5 1v5Zm-8.9-38H8l-.1-.7L8 28c.3-5.6 2.2-10.7 5.5-15.3A29.5 29.5 0 0 1 31.7.7C39.1-.9 46.3.2 53 4a29.6 29.6 0 0 1 15.5 26v12h-16c-.8 0-1-.2-1-1V29.4a13.2 13.2 0 0 0-12.4-12.7 13.3 13.3 0 0 0-14.5 13.8V42Z"
-									/>
-								</svg>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<nav class="mt-12 flex justify-center gap-12">
-				<button class="w-8" on:click={() => swiper.slidePrev()}>
-					<svg fill="currentColor" viewBox="0 0 64 44">
-						<path
-							d="M10.2 19H64v6H10.2l14 13.9a3 3 0 0 1 0 4.2 3 3 0 0 1-4.2 0L.9 24.1a3 3 0 0 1 0-4.2l19-19a3 3 0 0 1 4.3 0 3 3 0 0 1 0 4.2l-14 14Z"
-						/>
-					</svg>
-				</button>
-				<button class="w-8" on:click={() => swiper.slideNext()}>
-					<svg fill="currentColor" viewBox="0 0 64 44">
-						<path
-							d="M53.8 19H0v6h53.8l-14 13.9a3 3 0 0 0 0 4.2 3 3 0 0 0 4.2 0l19.1-19a3 3 0 0 0 0-4.2l-19-19a3 3 0 0 0-4.3 0 3 3 0 0 0 0 4.2l14 14Z"
-						/>
-					</svg>
-				</button>
-			</nav>
-		</div>
-
-		<div class="absolute -top-2 left-0 flex items-center">
-			<span class="w-14 border-t-4 border-[#F8EBC0]" />
-			<span class="relative h-5 w-5 rounded-full bg-[#F8EBC0]">
-				<span class="absolute inset-0 animate-ping rounded-full bg-[#F8EBC0]" />
-			</span>
-		</div>
-
-		<div class="absolute -bottom-2 right-0 flex items-center">
-			<span class="relative h-5 w-5 rounded-full bg-[#F8EBC0]">
-				<span class="absolute inset-0 animate-ping rounded-full bg-[#F8EBC0]" />
-			</span>
-			<span class="w-14 border-t-4 border-[#F8EBC0]" />
-		</div>
-	</div>
+	<BlockNav />
 </main>
