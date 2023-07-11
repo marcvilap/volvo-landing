@@ -34,7 +34,7 @@
 				'El nuevo posicionamiento de Volvo que nos hace recordar los inventos que cambiaron la seguridad para siempre',
 			color: '#fff',
 			background: '#07AAA2',
-			link: 'https://www.eltiempo.es/bc/pioneros/forlife/',
+			link: 'https://www.eltiempo.es/bc/pioneros/forlife/index.html',
 			image: circle01,
 		},
 		{
@@ -42,7 +42,7 @@
 			description: 'El reto del sector para cumplir con los objetivos de descarbonización del futuro',
 			color: '#021B44',
 			background: '#EAC343',
-			link: 'https://www.eltiempo.es/bc/pioneros/Transporte/',
+			link: 'https://www.eltiempo.es/bc/pioneros/Transporte/index.html',
 			image: circle02,
 		},
 		{
@@ -50,7 +50,7 @@
 			description: '¿Cómo se usa la Inteligencia Artifical en la movilidad?',
 			color: '#021B44',
 			background: '#e0f3fd',
-			link: '/',
+			link: 'https://www.eltiempo.es/bc/pioneros/ia/index.html',
 			image: circle03,
 		},
 		{

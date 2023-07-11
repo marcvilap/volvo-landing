@@ -25,7 +25,7 @@
 	{/if}
 
 	<Intersection bind:intersecting class="container relative flex min-h-screen flex-col items-center pb-8 pt-24">
-		<a class="animate-scale mb-8 w-14 self-start" href="/">
+		<a class="animate-scale mb-8 w-14 self-start" href="https://www.eltiempo.es/bc/pioneros/">
 			<svg viewBox="0 0 90 90">
 				<circle fill="#f8ebc0" cx="45" cy="45" r="45" />
 				<path
