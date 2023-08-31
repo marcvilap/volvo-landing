@@ -45,10 +45,11 @@
 				<p>
 					Esa seguridad juega un papel fundamental en nuestras vidas y en nuestro bienestar mental, y Volvo Cars lo
 					sabe. Por esta razón, acaba de lanzar
-					<a target="_blank" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/">For Life</a>, su
-					nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado en
-					protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la nueva
-					era de seguridad. Porque
+					<a target="_blank" rel="sponsored" href="https://tecvolucion.com/for-life-conducir-seguro-vivir-seguro/"
+						>For Life</a
+					>, su nuevo posicionamiento en el que nos recuerda, como empresa que durante casi un siglo ha estado volcado
+					en protegernos en la carretera, que no hay mayor definición de libertad que aquella que va de la mano de la
+					nueva era de seguridad. Porque
 					<strong>sin seguridad (en nuestra salud, bienestar o economía) no hay progreso, ni libertad.</strong>
 				</p>
 				<p>
