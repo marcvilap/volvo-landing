@@ -6,6 +6,7 @@
 	import circle01 from '$lib/assets/images/circle01.svg'
 	import circle02 from '$lib/assets/images/circle02.svg'
 	import circle03 from '$lib/assets/images/circle03.png'
+	import circle04 from '$lib/assets/images/circle04.svg'
 	let theSwiper: HTMLDivElement
 	let swiper: Swiper
 	onMount(() => {
@@ -54,12 +55,12 @@
 			image: circle03,
 		},
 		{
-			title: '',
-			description: '',
-			color: '#fff',
-			background: '#666',
-			link: null,
-			image: circle01,
+			title: 'EX30',
+			description: 'Los pequelos gestos que han creado las hazañas sostenibles de la historia',
+			color: '#021B44',
+			background: '#92815d',
+			link: 'https://www.eltiempo.es/bc/pioneros/ex30/index.html',
+			image: circle04,
 		},
 		{
 			title: '',
